@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+  <meta name="copyright" content="MACode ID, https://macodeid.com/">
+
+  <title>One Health - Medical Center HTML5 Template</title>
+
+  <link href="{{ url_for('static', filename='maicons.css')}}" rel="stylesheet" />
+
+  <link href="{{ url_for('static', filename='bootstrap.css')}}" rel="stylesheet" />
+
+  <link href="{{ url_for('static', filename='owl.carousel.css')}}" rel="stylesheet" />
+
+  <link href="{{ url_for('static', filename='animate.css')}}" rel="stylesheet" />
+
+  <link href="../static/css/theme.css" rel="stylesheet" />
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css"
+    integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
+
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/jquery-ui.min.js"></script>
+
+</head>
+
+<body>
+
+  <!-- Back to top button -->
+  <div class="back-to-top"></div>
+
+  <header>
+
+
+    <nav class="navbar navbar-expand-lg navbar-light shadow-sm">
+      <div class="container">
+        <a class="navbar-brand" href="#"><span class="text-primary">Diabetic</span>Retinopathy</a>
+
+
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupport"
+          aria-controls="navbarSupport" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupport">
+          <ul class="navbar-nav ml-auto">
+
+          </ul>
+        </div> <!-- .navbar-collapse -->
+      </div> <!-- .container -->
+    </nav>
+  </header>
+
+  <!-- <div class="page-hero bg-image overlay-dark" style="background-image: url(../static/img/eye-image.jpg);">
+    <div class="hero-section">
+      <div class="container text-center wow zoomIn">
+        <span class="subhead">Let's make your life happier</span>
+        <h1 class="display-4">Healthy Living</h1> -->
+  <!-- <a href="#" class="btn btn-primary">Let's Consult</a> -->
+  <!-- </div>
+    </div>
+  </div> -->
+
+
+  <div class="page-section">
+    <div class="container">
+      <h1 class="text-center wow fadeInUp">Classification of Diabetic Retinopathy</h1>
+
+      <div class="row mt-5 ">
+        <div class="col-12 col-sm-6 py-2 wow fadeInLeft">
+          <form method="post" action="{{ url_for('upload_image')}}" enctype="multipart/form-data" class="main-form">
+          <input type="file" class="form-control" name="file" id="file">
+
+          <div class="col-12 col-sm-6 py-2 wow fadeInLeft">
+
+            <div class="col-12 col-sm-6 py-2 wow fadeInLeft">
+              <img id="blah" src="#" alt="your image" />
+            </div>
+          </div>
+         
+
+
+
+
+          <button type="submit" class="btn btn-primary mt-3 wow zoomIn">Submit</button>
+          </form>
+        </div>
+        <!-- <div class="col-12 col-sm-6 py-2 wow fadeInLeft">
+
+        </div>
+        <div class="col-12 col-sm-6 py-2 wow fadeInLeft"></div>
+
+        <div class="col-12 col-sm-6 py-2 wow fadeInLeft">
+          <img id="blah" src="{{ img }}" alt="your image" />
+        </div>
+      </div> -->
+
+        
+
+    </div>
+
+    <br>
+    <div class="row mt-5">
+      <div class="col-12 col-sm-6 py-2 wow fadeInRight" id="result">
+        <p>This image most likely belongs to <mark> <strong> {{aclass}} </strong> </mark> with a <mark> <strong> {{ascore}} </strong> </mark> percent
+          confidence </p>
+      </div>
+    </div>
+  </div>
+   <!-- .page-section -->
+
+
+
+
+  <hr>
+
+  </div>
+  </footer>
+
+
+
+  <script src="{{url_for('static', filename='jquery-3.5.1.min.js')}}"></script>
+
+  <script src="{{url_for('static', filename='bootstrap.bundle.min.js')}}"></script>
+
+  <script src="{{url_for('static', filename='owl.carousel.min.js')}}"></script>
+
+  <script src="{{url_for('static', filename='wow.min.js')}}"></script>
+
+  <script src="../static/js/theme.js"></script>
+
+  <script>
+    function readURL(input) {
+      if (input.files && input.files[0]) {
+        var reader = new FileReader();
+
+        reader.onload = function (e) {
+          $('#blah').attr('src', e.target.result);
+        }
+
+        reader.readAsDataURL(input.files[0]);
+      }
+    }
+
+    $("#file").change(function () {
+      readURL(this);
+    });
+  </script>
+
+
+
+
+
+</body>
+
+</html>
